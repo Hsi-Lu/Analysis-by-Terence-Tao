@@ -14,7 +14,6 @@
 
 \newcommand{\doubleplus}{\mathbin{{+}{+}}}
 
-
 \begin{document}
 \section{Page 20}
 Notice that we can prove easily, using Axioms 2.1, 2.2, and induction (Axiom
@@ -94,7 +93,6 @@ If $a = b$, then $a\doubleplus  > b$ (why?).
     Included in solution ot Exercise 2.2.5
 \end{proof}
 
-
 \section{Exercise 2.2.7}
 Solution found from \url{https://math.stackexchange.com/a/4730660}
 
@@ -171,7 +169,7 @@ theory tremendously (and can be viewed as one basis for an intuitive model of se
 
     \textbf{Axiom 3.7} (Replacement). Let A be a set. For any object $x\in A$, and any object
     $y$, suppose we have a statement $P(x, y)$ pertaining to $x$ and $y$, such that for each
-    $x\in A$ there is at most one $y$ for which P(x,y) is true. Then there exists a set
+    $x\in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set
     $\set{y : P(x, y)\text{ is true for some } x\in A}$, such that for any object $z$,
     \begin{gather*}
         z \in\set{y : P(x, y)\text{ is true for some }x\in A}\\
@@ -210,10 +208,11 @@ theory tremendously (and can be viewed as one basis for an intuitive model of se
 
     Axiom 3.7 (Replacement) Let $P(y)$ be the property that there exists $x\in A$ such that $P(x,y)$ is true.
     \[
-        z\in\left\{y:P(y)\ \textrm{is true}\right\}=\left\{x:P(x,y)\ \textrm{is true}\ \textrm{for some}\ x\in A\right\}\\
+        z\in\left\{y:P(y)\ \textrm{is true}\right\}=\left\{y:P(x,y)\ \textrm{is true}\ \textrm{for some}\ x\in A\right\}\\
         \iff P(x,z)\ \textrm{is true}\ \textrm{for some}\ x.
     \]
 \end{proof}
+
 \section{Exercise 3.2.2}
 Use the axiom of regularity (and the singleton set axiom) to show that if $A$ is a set, then $A\notin A$. Furthermore, show that if $A$ and $B$ are two sets, then either $A\notin B$ or $B\notin A$ (or both).
 (One corollary of this exercise is worth noting: given any set $A$, there exists a mathematical object
@@ -238,8 +237,6 @@ $A$ to create a larger set, namely $A \cup\set{A}$.)
     Furthermore, suppose that $A,B$ are two sets and we both have $A\in B$ and $B\in A$. By Axiom 3.4 (and Axiom 3.5), we have $A,B\in\set{A,B}$. By Axiom 3.10, we have $A\cap\set{A,B}=\emptyset$ and $B\cap\set{A,B}=\emptyset$, but this is contradictive with $A\in B,B\in A$ and $A,B\in\set{A,B}$.
 \end{proof}
 
-
-
 \section{Exercise 3.2.3}
 Show (assuming the other axioms of set theory) that the universal specification
 axiom, Axiom 3.9, is equivalent to an axiom postulating the existence of a “universal set” $\Omega$
@@ -258,8 +255,8 @@ axiom of foundation specifically rules out the axiom of universal specification.
 \end{proof}
 
 \section{Thoughts on the set of all sets}
-Let $U$ be the set of all sets. Does such $U$ exist? 
-(Note that $U$ is different from the universal set $\Omega$ in the Exercise 3.2.3, 
+Let $U$ be the set of all sets. Does such $U$ exist?
+(Note that $U$ is different from the universal set $\Omega$ in the Exercise 3.2.3,
 where $\Omega$ is the set consisting everything.)
 \begin{proof}
     The proof is clipped from \href{https://pansci.asia/archives/75290}{PanSci}.
@@ -275,7 +272,6 @@ where $\Omega$ is the set consisting everything.)
     This made the claim above to be true only when it's vacuously true,
     which is that $B\in V$ is not true. Thus lead to contradiction.
 \end{proof}
-
 
 \section{Exercise 3.4.2 (iii)}
 Solution found from \url{https://math.stackexchange.com/a/4710434}
@@ -303,8 +299,6 @@ $X$,and let $U$ be a subset of $Y$.
     Now, since $z\in f^{-1}(U)$ then $f(z)\in U$,
     hence $f(x)\in U$. Therefore, $x\in f^{-1}(U)$.
 \end{proof}
-
-
 
 \section{Exercise 3.4.6 (ii)}
 \textbf{Exercise 3.4.6} (ii)
@@ -335,5 +329,100 @@ the “power set axiom”.)
     exists. But this is just $Y^X$, by definition. So we're done.
 \end{proof}
 
+\section{Exercise 3.5.1}
+ (i) Suppose we \textit{define} the ordered pair $(x, y)$
+for any objects $x$ and $y$ by the formula $(x, y) := \{\{x\}, \{x, y\}\}$
+(thus using several applications of Axiom 3.4).
+Thus, for instance, $(1,2)$ is the set $\{\{1\}, \{1,2\}\}$,
+$(2,1)$ is the set $\{\{2\}, \{2,1\}\}$,
+and $(1,1)$ is the set $\{\{1\}\}$.
+Show that such a definition (known as the \textit{Kuratowski definition} of an ordered pair)
+indeed obeys the property (3.5).
+
+(ii) Suppose we instead define an ordered pair using the alternate definition $(x, y) := \{x, \{x, y\}\}$.
+Show that this definition (known as the \textit{short definition} of an ordered pair)
+also verifies (3.5) and is thus also an acceptable definition of ordered pair.
+(Warning: this is tricky; one needs the axiom of regularity, and in particular Exercise 3.2.2.)
+
+(iii) Show that regardless of the definition of ordered pair,
+the Cartesian product $X \times Y$ of any two sets $X, Y$ is again a set.
+(Hint: first use the axiom of replacement to show that for any $x \in X$,
+the set $\{(x, y) : y \in Y\}$ is a set, and then apply the axiom of union.)
+
+\begin{quotation}
+    Axiom 3.4 is quoted in section Exercise 3.2.1.
+    And Axiom of regularity is quoted in section Exercise 3.2.2.
+    They are not quoted here again.
+
+    \textbf{Axiom 3.2} (Equality of sets).
+    Two sets $A$ and $B$ are equal, $A = B$,
+    iff every element of $A$ is an element of $B$ and vice versa.
+    To put it another way, $A = B$ if and only if every element $x$ of $A$ belongs also to $B$,
+    and every element $y$ of $B$ belongs also to $A$.
+
+    \textbf{Axiom 3.12} (Union). Let $A$ be a set, all of whose elements are themselves sets.
+    Then there exists a set $\bigcup A$
+    whose elements are precisely those objects which are elements of the elements of $A$,
+    thus for all objects $x$,
+    \[
+        x \in\bigcup A \iff (x \in S \text{ for some } S \in A).
+    \]
+
+    \textbf{Definition 3.5.1} (Ordered pair). If $x$ and $y$ are any objects (possibly equal),
+    we define the \textit{ordered pair} $(x, y)$ to be a new object,
+    consisting of $x$ as its first component and $y$ as its second component.
+    Two ordered pairs $(x, y)$ and $(x', y')$ are considered equal
+    if and only if both their components match, i.e.,
+    \[
+        (x, y) = (x', y') \iff (x = x' \text{ and } y = y')\tag*{(3.5)}
+    \]
+\end{quotation}
+
+There is solution in other anwser book, but it doesn't use the hint.
+The proof below utilizes the hint.
+
+\begin{proof}
+    (i) If $(x, y) = (x', y')$, then by Kuratowski definition we have
+    \[\set{x}=\set{x'}\text{ and }\set{x,y}=\set{x',y'}\]
+    or
+    \[\set{x}=\set{x',y'}\text{ and }\set{x,y}=\set{x'}\]
+    In the first case, we have $x=x'$ and whatever $\set{x,y}$, $\set{x',y'}$
+    are singleton or pairwise set, we all have $y=y'$.
+    For the second case, $\set{x,y}$ and $\set{x',y'}$ have to be singleton set,
+    then we can easily see that $x=x'=y=y'$.
+
+    Conversely, if $x=x'$ and $y=y'$, then by axiom 3.2, we can easily conclude $(x, y) = (x', y')$.
+
+    (ii) if $(x, y) = (x', y')$, then by short definition we have
+    \[\set{x,\set{x,y}}=\set{x',\set{x',y'}}\]
+    We first show that $\set{x,\set{x,y}}$ or $\set{x',\set{x',y'}}$ can't be singleton set.
+    If $\set{x,\set{x,y}}$ is a singleton set, then we have $x=\set{x,y}$.
+    So $x$ is a set, by axiom of regularity, we have $x$ or $\set{x,y}$ is disjoint from $\set{x,\set{x,y}}$.
+    If $x=\set{x,y}$, we have $\set{x,y}=\set{\set{x,y},y}$,
+    but $\set{x,y}\in\set{\set{x,y},y}\cap\set{x,\set{x,y}}$ will lead to contradiction.
+
+    Now there remains two cases:
+    \begin{itemize}
+        \item Case 1: $x=x'$ and $\set{x,y}=\set{x',y'}$.
+        \item Case 2: $\set{x,y}=x'$ and $x=\set{x',y'}$.
+    \end{itemize}
+    If it's the second case, we have $x$ and $\set{x,y}$ are sets.
+    Let's examine if $\set{x,{x,y}}$ complies axiom of regularity.
+
+    Since $x=\set{x',y'}=\set{\set{x,y},y'}$, $\set{x,y}\in x\cap\set{x,\set{x,y}}$.
+    Besides, $x\in\set{x,y}\cap\set{x,\set{x,y}}$.
+    So for the second case, there's a contradiction.
+    For the first case, it's easy to verify $x=x'$ and $y=y'$.
+
+    (iii) We follow the hint. Fix $x$, for any $y\in Y$, we can construct a property $P(y,z)$ such that
+    \begin{itemize}
+        \item Definition 3.5.1: Let $P(y,z)$ be $z=(x,y)$.
+        \item Kuratowski definition: Let $P(y,z)$ be $z=\{\{x\},\{x,y\}\}$.
+        \item Short definition: Let $P(y,z)$ be $z=\{x,\{x,y\}\}$.
+    \end{itemize}
+    In short, for a fixed $x$, we have constructed $\set{(x,y):y\in Y}$ as a set.
+    For every $x\in X$, we can construct such set.
+    Then we union all of these sets together, we have $X\times Y$, which by Axiom of union, is a set
+\end{proof}
 
 \end{document}
