@@ -6,6 +6,8 @@
 
 \usepackage{amsmath} % is needed to use the math environments align, aligned, gather, gathered, multline etc.
 \usepackage{amsthm} % For theorem environments
+\usepackage{amsfonts} %For math fonts like \mathbb{R}
+
 
 \usepackage{braket} % For \set
 \usepackage{soul} %For strikethough text
@@ -424,5 +426,17 @@ The proof below utilizes the hint.
     For every $x\in X$, we can construct such set.
     Then we union all of these sets together, we have $X\times Y$, which by Axiom of union, is a set
 \end{proof}
+
+
+\section{Note on exercise 3.5.6}
+\begin{quotation}
+    \textbf{Exercise 3.5.6}
+    Let $A, B, C, D$ be non-empty sets. Show that $A \times B \subseteq C \times D$ if and only if $A \subseteq C$ and $B \subseteq D$, and that $A \times B = C \times D$ if and only if $A = C$ and $B = D$.
+    What happens if some or all of the hypotheses that $A, B, C, D$ are non-empty are removed?
+\end{quotation}
+Note that the hypotheses of non-emptiness cannot be removed. Think about the case
+$A=\emptyset $ and $B\ne \emptyset $, and $A\times B\subseteq C\times D$,
+then $A\subseteq C$ and $B$ can be any set, and $D$ can be any set.
+
 
 \end{document}
