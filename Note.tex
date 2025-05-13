@@ -427,7 +427,6 @@ The proof below utilizes the hint.
     Then we union all of these sets together, we have $X\times Y$, which by Axiom of union, is a set
 \end{proof}
 
-
 \section{Note on exercise 3.5.6}
 \begin{quotation}
     \textbf{Exercise 3.5.6}
@@ -438,5 +437,64 @@ Note that the hypotheses of non-emptiness cannot be removed. Think about the cas
 $A=\emptyset $ and $B\ne \emptyset $, and $A\times B\subseteq C\times D$,
 then $A\subseteq C$ and $B$ can be any set, and $D$ can be any set.
 
+\section{Exercise 3.5.9}
+Suppose that $I$ and $J$ are two sets, and for all $\alpha \in I$, let $A_\alpha$ be a set,
+and for all $\beta \in J$, let $B_\beta$ be a set. Show that
+$\left( \bigcup_{\alpha \in I} A_\alpha \right)
+    \cap \left( \bigcup_{\beta \in J} B_\beta \right)
+    = \bigcup_{(\alpha, \beta) \in I \times J} (A_\alpha \cap B_\beta)$
+What happens if one interchanges all the union and intersection symbols here?
+
+\begin{proof}
+    The First part of the exercise is shown in the answer book.
+    For the case after interchanging all the union and intersection symbols,
+    the equation still holds.
+
+    What we want to prove is that
+    \[
+        (\bigcup_{\alpha \in I} A_{\alpha})
+        \cap (\bigcup_{\beta \in J} B_{\beta})
+        = \bigcup_{(\alpha,\beta) \in I \times J} (A_{\alpha} \cap B_{\beta})
+    \]
+    For the "$\implies$" direction,
+    if $x\in (\bigcup_{\alpha \in I} A_{\alpha})\cap (\bigcup_{\beta \in J} B_{\beta})$,
+    then there exists $\alpha'\in I$ such that $x\in A_{\alpha'}$,
+    and $\beta'\in J$ such that $x\in B_{\beta'}$.
+    So we have $x\in A_{\alpha'}\cap B_{\beta'}$, which implies
+    there's $(\alpha',\beta')\in I\times J$ such that $x\in A_{\alpha'}\cap B_{\beta'}$.
+    Thus the "$\implies$" direction is proved.
+
+    For the "$\impliedby$" direction, if $x\in \bigcup_{(\alpha,\beta) \in I \times J} (A_{\alpha} \cap B_{\beta})$,
+    then there exists $(\alpha',\beta')\in I\times J$ such that $x\in A_{\alpha'}\cap B_{\beta'}$.
+    So $x\in A_{\alpha'}$ and $x\in B_{\beta'}$,
+    which implies $x\in\bigcup_{\alpha \in I} A_{\alpha}$ and $x\in\bigcup_{\beta \in J} B_{\beta}$.
+    Thus $x\in (\bigcup_{\alpha \in I} A_{\alpha})\cap (\bigcup_{\beta \in J} B_{\beta})$.
+    The "$\impliedby$" direction is proved.
+\end{proof}
+
+\section{Note on exercise 3.5.12(i)}
+Note that there is a typo mistake. $a$'s domain should be $\mathbb{n}$
+
+\begin{quotation}
+    \textbf{Exercise 3.5.12}
+
+    This exercise will establish a rigorous version of Proposition 2.1.16 that avoids circularity (in particular, avoiding the use of any object that required Proposition 2.1.16 to construct).
+
+    (i) Let $X$ be a set, let $f : \mathbb{N} \times X \to X$ be a function,
+    and let $c$ be an element of $X$. Show that there exists a function $a: \mathbb{N} \to X$ such that
+    \[
+        a(0) = c
+    \]
+    and
+    \[
+        a(n+1) = f(n, a(n)) \quad \text{for all } n \in \mathbb{N}
+    \]
+    and furthermore that this function is unique.
+
+    (Hint: first show inductively, by a modification of the proof of Lemma 3.5.11,
+    that for every natural number $N \in \mathbb{N}$,
+    there exists a unique function $a_N : \{n \in \mathbb{N} : n \leq N\} \to X$
+    such that $a_N(0) = c$ and $a_N(n+1) = f(n, a_N(n))$ for all $n \in \mathbb{N}$ such that $n < N$.)
+\end{quotation}
 
 \end{document}
