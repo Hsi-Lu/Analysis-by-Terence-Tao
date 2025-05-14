@@ -12,7 +12,16 @@
 \usepackage{braket} % For \set
 \usepackage{soul} %For strikethough text
 
-\usepackage[hidelinks]{hyperref}
+\usepackage[dvipsnames]{xcolor} %loads 68 named colors (CMYK)
+\usepackage{hyperref}
+% Custom hyperlink colors
+\hypersetup{
+    colorlinks=true,
+    linkcolor=RoyalBlue,    % Internal links
+    filecolor=ForestGreen,  % Local files
+    urlcolor=RedOrange,     % Web URLs
+    citecolor=BrickRed,     % Citations
+}
 
 \newcommand{\doubleplus}{\mathbin{{+}{+}}}
 
