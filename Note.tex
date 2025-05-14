@@ -559,4 +559,52 @@ For full proof, please refer to \url{https://taoanalysis.wordpress.com/2020/05/0
 Note that there is a typo mistake in (i) in the book. $a$'s domain should be $\mathbb{N}$.
 Quatation below contains the correct version.
 
+\section{Exercise 3.5.13}
+The purpose of this exercise is to show that there is essentially only one version 
+of the natural number system in set theory (cf. the discussion in Remark 2.1.12). 
+
+Suppose we have a set $\mathbb{N}'$ of “alternative natural numbers”, an “alternative zero” 
+$0'$, and an “alternative increment operation” which takes any alternative natural 
+number $n' \in \mathbb{N}'$ and returns another alternative natural number $n'\doubleplus' \in \mathbb{N}'$, such 
+that the Peano axioms (Axioms 2.1–2.5) all hold with the natural numbers, zero, 
+and increment replaced by their alternative counterparts. 
+Show that there exists a bijection $f : \mathbb{N} \to \mathbb{N}'$ from the natural numbers 
+to the alternative natural numbers such that $f(0) = 0$, and such that for any 
+$n \in \mathbb{N}$ and $n' \in \mathbb{N}'$, we have 
+$f(n) = n$ if and only if $f(n\doubleplus) = n'\doubleplus'$.
+(Hint: use Exercise 3.5.12.)
+
+The proof is revised from the one in 
+\href{https://christangdt.home.blog/2019/04/04/%e9%99%b6%e5%93%b2%e8%bd%a9%e5%ae%9e%e5%88%86%e6%9e%903-5%e5%8f%8a%e4%b9%a0%e9%a2%98-analysis-i-3-5/}{{christangdt's blog}}
+to make use of exercise 3.5.12.
+\begin{proof}
+    Let $g:\mathbb{N}\times\mathbb{N}'\to\mathbb{N}'$ be a function that satisfies
+    \[g(n,n')=n'\doubleplus'\]
+    and $f:\mathbb{N}\to\mathbb{N}'$ be a function such that 
+    \[f(0) = 0', \quad f(n\doubleplus) = g(n,f(n)), \quad \forall n \in \mathbb{N}\]
+    By exercise 3.5.12, $f$ is a unique function satisfies the above condition.
+    Besides, we can conclude $f(n\doubleplus)=f(n)\doubleplus'$ and 
+    $f(n) = n' \iff f(n\doubleplus) = n'\doubleplus'$.
+    
+    To show $f$ is injective: Let $f(n) = f(m)$ for $m, n \in \mathbf{N}$. If $f(n) = f(m) = 0'$, then we have $m = n = 0$. 
+    If $f(n) = f(m) = n' \neq 0'$, then obviously $n \neq 0, m \neq 0$, and we have
+    \[
+    a, b \in \mathbf{N}, \quad a\doubleplus = n, \quad b\doubleplus = m, \quad f(a)\doubleplus' = f(b)\doubleplus'.
+    \]
+    This means $f(a) = f(b)$. Now assume $n \neq m$. Without loss of generality, let $n = 0$. Then we can deduce that
+    \[
+    f(0) = f(d) = 0'.
+    \]
+    As $d > 0$, there exists $e \in \mathbf{N}$ such that $e\doubleplus = d$, then
+    \[
+    f(d) = f(e)\doubleplus' = 0'.
+    \]
+    This violates Peano Axiom 3.
+    
+    To show $f$ is surjective: Given $\forall n' \in \mathbb{N}'$, if $n' = 0'$, we have $f(0) = n'$. If $n' > 0'$, there exists $m' \in \mathbb{N}'$ such that $m'\doubleplus' = n'$. Using induction, we assume that for every alternative natural number less than $n'$, there exists a natural number whose image is the given alternative natural number, so there exists $m \in \mathbf{N}$ such that $f(m) = m'$. Thus,
+    \[
+    f(m\doubleplus) = f(m)\doubleplus' = n',
+    \]
+    and $m\doubleplus \in \mathbf{N}$, which completes the proof.
+\end{proof}
 \end{document}
