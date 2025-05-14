@@ -489,15 +489,15 @@ What happens if one interchanges all the union and intersection symbols here?
     from the natural numbers to the natural numbers.
     Let $c$ be a natural number.
     Then we can assign a unique natural number $a_n$ to each natural number $n$, such that
-    $a_0 = c$ and $a_{n++} = f_n(a_n) \quad \text{for each natural number } n$.
+    $a_0 = c$ and $a_{n\doubleplus} = f_n(a_n) \quad \text{for each natural number } n$.
     \begin{proof}
         (Informal) We use induction.
         We first observe that this procedure gives a single value to $a_0$, namely $c$.
-        (None of the other definitions $a_n++ := f_n(a_n)$ will redefine the value of $a_0$,
+        (None of the other definitions $a_n\doubleplus := f_n(a_n)$ will redefine the value of $a_0$,
         because of Axiom 2.3.)
         Now suppose inductively that the procedure gives a single value to $a_n$.
-        Then it gives a single value to $a_n++$, namely $a_n++ := f_n(a_n)$.
-        (None of the other definitions $a_m++ := f_m(a_m)$ will redefine the value of $a_n++$,
+        Then it gives a single value to $a_n\doubleplus$, namely $a_n\doubleplus := f_n(a_n)$.
+        (None of the other definitions $a_m\doubleplus := f_m(a_m)$ will redefine the value of $a_n\doubleplus$,
         because of Axiom 2.4.)
         This completes the induction, and so $a_n$ is defined for each natural number $n$,
         with a single value assigned to each $a_n$.
@@ -533,8 +533,8 @@ What happens if one interchanges all the union and intersection symbols here?
     that for every natural number $N \in \mathbb{N}$,
     there exists a unique pair $A_N, B_N$ of subsets of $\mathbb{N}$ which obeys the following properties:
     (a) $A_N \cap B_N = \emptyset$, (b) $A_N \cup B_N = \mathbb{N}$, (c) $0 \in A_N$,
-    (d) $N++ \in B_N$, (e) whenever $n \in B_N$, we have $n++ \in B_N$,
-    (f) whenever $n \in A_N$ and $n \neq N$, we have $n++ \in A_N$.
+    (d) $N\doubleplus \in B_N$, (e) whenever $n \in B_N$, we have $n\doubleplus \in B_N$,
+    (f) whenever $n \in A_N$ and $n \neq N$, we have $n\doubleplus \in A_N$.
     Once one obtains these sets, use $A_N$ as a substitute for
     $\{n \in \mathbb{N} : n \leq N\}$ in the previous argument.)
 \end{quotation}
