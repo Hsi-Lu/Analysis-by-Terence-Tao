@@ -481,13 +481,32 @@ What happens if one interchanges all the union and intersection symbols here?
     The "$\impliedby$" direction is proved.
 \end{proof}
 
-\section{Note on exercise 3.5.12(i)}
-Note that there is a typo mistake. $a$'s domain should be $\mathbb{n}$
+\section{Note on exercise 3.5.12}
 
 \begin{quotation}
+    \textbf{Proposition 2.1.16} (Recursive definitions).
+    Suppose for each natural number $n$, we have some function $f_n : \mathbb{N} \to \mathbb{N}$
+    from the natural numbers to the natural numbers.
+    Let $c$ be a natural number.
+    Then we can assign a unique natural number $a_n$ to each natural number $n$, such that
+    $a_0 = c$ and $a_{n++} = f_n(a_n) \quad \text{for each natural number } n$.
+    \begin{proof}
+        (Informal) We use induction.
+        We first observe that this procedure gives a single value to $a_0$, namely $c$.
+        (None of the other definitions $a_n++ := f_n(a_n)$ will redefine the value of $a_0$,
+        because of Axiom 2.3.)
+        Now suppose inductively that the procedure gives a single value to $a_n$.
+        Then it gives a single value to $a_n++$, namely $a_n++ := f_n(a_n)$.
+        (None of the other definitions $a_m++ := f_m(a_m)$ will redefine the value of $a_n++$,
+        because of Axiom 2.4.)
+        This completes the induction, and so $a_n$ is defined for each natural number $n$,
+        with a single value assigned to each $a_n$.
+    \end{proof}
+
     \textbf{Exercise 3.5.12}
 
-    This exercise will establish a rigorous version of Proposition 2.1.16 that avoids circularity (in particular, avoiding the use of any object that required Proposition 2.1.16 to construct).
+    This exercise will establish a rigorous version of Proposition 2.1.16 that avoids circularity
+    (in particular, avoiding the use of any object that required Proposition 2.1.16 to construct).
 
     (i) Let $X$ be a set, let $f : \mathbb{N} \times X \to X$ be a function,
     and let $c$ be an element of $X$. Show that there exists a function $a: \mathbb{N} \to X$ such that
@@ -504,6 +523,40 @@ Note that there is a typo mistake. $a$'s domain should be $\mathbb{n}$
     that for every natural number $N \in \mathbb{N}$,
     there exists a unique function $a_N : \{n \in \mathbb{N} : n \leq N\} \to X$
     such that $a_N(0) = c$ and $a_N(n+1) = f(n, a_N(n))$ for all $n \in \mathbb{N}$ such that $n < N$.)
+
+    (ii) (Warning: this is challenging.)
+    Prove (i) without using any properties of the natural numbers other than the Peano axioms directly
+    (in particular, without using the ordering of the natural numbers,
+    and without appealing to Proposition 2.1.16).
+
+    (Hint: first show inductively, using only the Peano axioms and basic set theory,
+    that for every natural number $N \in \mathbb{N}$,
+    there exists a unique pair $A_N, B_N$ of subsets of $\mathbb{N}$ which obeys the following properties:
+    (a) $A_N \cap B_N = \emptyset$, (b) $A_N \cup B_N = \mathbb{N}$, (c) $0 \in A_N$,
+    (d) $N++ \in B_N$, (e) whenever $n \in B_N$, we have $n++ \in B_N$,
+    (f) whenever $n \in A_N$ and $n \neq N$, we have $n++ \in A_N$.
+    Once one obtains these sets, use $A_N$ as a substitute for
+    $\{n \in \mathbb{N} : n \leq N\}$ in the previous argument.)
 \end{quotation}
+
+Why do the author say that the version of this exercise is more
+rigorous than the proof in proposition 2.1.16?
+In \href{https://terrytao.wordpress.com/books/analysis-i/comment-page-15/}{Tao's word}, it's because
+
+\begin{quotation}
+    The informal argument given for Proposition 2.1.16 actually cannot be
+    written formally in the language of first-order logic without first
+    using something like a partial function to formalize what it means to “uniquely define” a quantity $a_n$.
+    The problem here is that the uniqueness statement involves not just the value of $a_n$,
+    but also all preceding values $a_0, a_1, \dots, a_{n-1}$.
+    To be able to refer to these values formally, one needs a partial function.
+\end{quotation}
+
+As we are not researching logic, we won't take too much care about this.
+
+For full proof, please refer to \url{https://taoanalysis.wordpress.com/2020/05/04/exercise-3-5-12/}
+
+Note that there is a typo mistake in (i) in the book. $a$'s domain should be $\mathbb{N}$.
+Quatation below contains the correct version.
 
 \end{document}
