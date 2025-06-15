@@ -723,4 +723,90 @@ pile by pile or layer by layer.
 \includegraphics[width=0.45\textwidth]{count-by-layer.png}
 \hfil
 \includegraphics[width=0.45\textwidth]{count-by-pile.png}
+
+\section{Takeaway}
+\textbf{Proposition 7.2.5} Let $\sum_{n=m}^{\infty} a_n$ be a formal series of real numbers. 
+Then $\sum_{n=m}^{\infty} a_n$ converges if and only if, for every real number 
+$\varepsilon > 0$, there exists an integer $N \geq m$ such that 
+
+\[
+\sum_{n=p}^{q} a_n \leq \varepsilon \quad \text{for all } p, q \geq N.
+\]
+
+\medskip
+
+\textbf{Corollary 7.2.6 (Zero test)} Let $\sum_{n=m}^{\infty} a_n$ be a 
+convergent series of real numbers.
+Then we must have 
+\(
+\lim_{n \to \infty} a_n = 0.
+\)
+To put this another way, if $\lim_{n \to \infty} a_n$ is non-zero or 
+divergent, then the series $\sum_{n=m}^{\infty} a_n$ is divergent.
+
+\medskip
+
+\textbf{Definition 7.2.8} (Absolute convergence) Let $\sum_{n=m}^{\infty} a_n$ 
+be a formal series of real numbers. 
+We say that $\sum_{n=m}^{\infty} a_n$ converges absolutely if the series 
+$\sum_{n=m}^{\infty} |a_n|$ converges.
+
+\medskip
+
+\textbf{Proposition 7.2.9} (Absolute convergence test) Let $\sum_{n=m}^{\infty} a_n$ 
+be a formal series of real numbers. 
+If this series is absolutely convergent, then it is also convergent. Furthermore, 
+in this case we have the triangle inequality:
+\[
+\sum_{n=m}^{\infty} a_n \leq \sum_{n=m}^{\infty} |a_n|.
+\]
+
+\medskip
+
+\textbf{Proposition 7.2.11} (Alternating series test) Let $(a_n)_{n=m}^{\infty}$ 
+be a sequence of real numbers which are non-negative and decreasing, 
+thus $a_n \geq 0$ and $a_n \geq a_{n+1}$ for every $n \geq m$. 
+Then the series $\sum_{n=m}^{\infty} (-1)^n a_n$ is convergent if and 
+only if the sequence $a_n$ converges to $0$ as $n \to \infty$.
+
+\medskip
+
+\textbf{Proposition 7.3.1} Let $\sum_{n=m}^{\infty} a_n$ be a formal series of 
+non-negative real numbers. 
+Then this series is convergent if and only if there is a real number $M$ such that 
+\[
+\sum_{n=m}^{N} a_n \leq M \quad \text{for all integers } N \geq m.
+\]
+
+\medskip
+
+\textbf{Corollary 7.3.2} (Comparison test) Let $\sum_{n=m}^{\infty} a_n$ and 
+$\sum_{n=m}^{\infty} b_n$ be two formal series of real numbers, and suppose 
+that $|a_n| \leq b_n$ for all $n \geq m$. 
+Then if $\sum_{n=m}^{\infty} b_n$ is convergent, then $\sum_{n=m}^{\infty} a_n$ 
+is absolutely convergent, and in fact
+\[
+\sum_{n=m}^{\infty} a_n \leq \sum_{n=m}^{\infty} |a_n| \leq \sum_{n=m}^{\infty} b_n.
+\]
+
+\medskip
+
+\textbf{Lemma 7.3.3} (Geometric series) Let $x$ be a real number. 
+If $|x| \geq 1$, then the series $\sum_{n=0}^{\infty} x^n$ is divergent. 
+However, if $|x| < 1$, then the series is absolutely convergent:
+\[
+\sum_{n=0}^{\infty} x^n = \frac{1}{1 - x}.
+\]
+
+\medskip
+
+\textbf{Proposition 7.3.4} (Cauchy criterion) Let $(a_n)_{n=1}^{\infty}$ be a 
+decreasing sequence of non-negative real numbers (so $a_n \geq 0$ and 
+$a_{n+1} \leq a_n$ for all $n \geq 1$). 
+Then the series $\sum_{n=1}^{\infty} a_n$ is convergent if and only if the 
+series 
+\[
+\sum_{k=0}^{\infty} 2^k a_{2^k} = a_1 + 2a_2 + 4a_4 + 8a_8 + \dots
+\]
+is convergent.
 \end{document}
