@@ -724,6 +724,88 @@ pile by pile or layer by layer.
 \hfil
 \includegraphics[width=0.45\textwidth]{count-by-pile.png}
 
+\section{Exercise 7.4.2}
+Obtain an alternate proof of Proposition 7.4.3 using Proposition 7.4.1,
+Proposition 7.2.13, and expressing $a_n$ as the difference of $(a_n + |a_n|)$
+and $|a_n|$. (This argument is due to Will Ballard.)
+
+\begin{quotation}
+    \textbf{Proposition 7.4.3} (Rearrangement of series) Let $\sum_{n=0}^{\infty} a_n$
+    be an absolutely convergent series of real numbers, and let $f: \mathbb{N} \to \mathbb{N}$
+    be a bijection.
+    Then $\sum_{m=0}^{\infty} a_{f(m)}$ is also absolutely convergent, and has the
+    same sum:
+    \[
+        \sum_{n=0}^{\infty} a_n = \sum_{m=0}^{\infty} a_{f(m)}.
+    \]
+
+    \textbf{Proposition 7.4.1} Let $\sum_{n=0}^{\infty} a_n$ be a convergent series
+    of non-negative real numbers, and let $f: \mathbb{N} \to \mathbb{N}$ be a bijection.
+    Then $\sum_{m=0}^{\infty} a_{f(m)}$ is also convergent, and has the same sum:
+    \[
+        \sum_{n=0}^{\infty} a_n = \sum_{m=0}^{\infty} a_{f(m)}.
+    \]
+
+    \textbf{Proposition 7.2.13} (Series laws)
+
+    (a) If $\sum_{n=m}^{\infty} a_n$ is a series of real numbers converging to $x$,
+    and $\sum_{n=m}^{\infty} b_n$ is a series of real numbers converging to $y$, then
+    $\sum_{n=m}^{\infty} (a_n + b_n)$ is also a convergent series, and converges to $x + y$.
+    In particular, we have
+    \[
+        \sum_{n=m}^{\infty} (a_n + b_n) = \sum_{n=m}^{\infty} a_n + \sum_{n=m}^{\infty} b_n.
+    \]
+\end{quotation}
+
+\begin{proof}
+    Let $\sum_{n=0}^\infty a_n$ be absolutely convergent, so in particular $\sum |a_n|$ converges. \
+    Define two new series by
+    \[
+        b_n = a_n + |a_n|, \quad c_n = |a_n|.
+    \]
+    Then for each \( n \), \( b_n \geq 0 \) and \( c_n \geq 0 \).
+    Moreover,
+    \[
+        \sum_{n=0}^\infty b_n = \sum_{n=0}^\infty (a_n + |a_n|) = \sum_{n=0}^\infty a_n + \sum_{n=0}^\infty |a_n|
+    \]
+    converges (as the sum of two convergent series), and clearly \( \sum c_n = \sum |a_n| \) converges.
+
+    Let \( f: \mathbb{N} \to \mathbb{N} \) be any bijection.
+    Since both \( \{b_n\} \) and \( \{c_n\} \) are nonnegative-term series,
+    proposition 7.4.1 applies to each, giving
+    \[
+        \sum_{n=0}^\infty b_n = \sum_{m=0}^\infty b_{f(m)}, \quad \sum_{n=0}^\infty c_n = \sum_{m=0}^\infty c_{f(m)}.
+    \]
+    But \( b_{f(m)} = a_{f(m)} + |a_{f(m)}| \) and \( c_{f(m)} = |a_{f(m)}| \).
+    Hence
+    \[
+        \sum_{m=0}^\infty b_{f(m)} - \sum_{m=0}^\infty c_{f(m)} = \sum_{m=0}^\infty \bigl(a_{f(m)} + |a_{f(m)}|\bigr) - \sum_{m=0}^\infty |a_{f(m)}|.
+    \]
+    Since both of these latter series converge,
+    Proposition 7.2.13 (on the difference of two convergent series)
+    tells us that their difference converges and equals the difference of their sums.
+    Therefore,
+    \[
+        \sum_{m=0}^\infty \bigl(a_{f(m)} + |a_{f(m)}|\bigr) - \sum_{m=0}^\infty |a_{f(m)}| = \sum_{m=0}^\infty a_{f(m)}.
+    \]
+    Putting everything together,
+    \[
+        \sum_{n=0}^\infty a_n + \sum_{n=0}^\infty |a_n| = \sum_{n=0}^\infty b_n = \sum_{m=0}^\infty b_{f(m)} = \sum_{m=0}^\infty a_{f(m)} + \sum_{m=0}^\infty |a_{f(m)}|
+    \]
+    and
+    \[
+        \sum_{n=0}^\infty |a_n| = \sum_{m=0}^\infty |a_{f(m)}|.
+    \]
+    Subtracting the second equality from the first (again by \textbf{Proposition 7.2.13}) yields
+    \[
+        \sum_{n=0}^\infty a_n = \sum_{m=0}^\infty a_{f(m)},
+    \]
+    as required.
+\end{proof}
+
+
+
+
 \section{Takeaway}
 \textbf{Proposition 7.2.5} Let $\sum_{n=m}^{\infty} a_n$ be a formal series of real numbers.
 Then $\sum_{n=m}^{\infty} a_n$ converges if and only if, for every real number
