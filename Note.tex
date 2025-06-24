@@ -10,7 +10,7 @@
 
 
 \usepackage{braket} % For \set
-\usepackage{soul} %For strikethough text
+\usepackage{soul} %For strikethrough text
 
 \usepackage{graphicx}
 \graphicspath{ {./media/} }
@@ -724,6 +724,55 @@ pile by pile or layer by layer.
 \hfil
 \includegraphics[width=0.45\textwidth]{count-by-pile.png}
 
+
+\section{Limit comparison test}
+Corollary 7.3.2 stated the direct comparison test for series.
+\begin{quotation}
+    \textbf{Corollary 7.3.2} (Comparison test) Let $\sum_{n=m}^{\infty} a_n$ and
+    $\sum_{n=m}^{\infty} b_n$ be two formal series of real numbers, and suppose
+    that $|a_n| \leq b_n$ for all $n \geq m$.
+    Then if $\sum_{n=m}^{\infty} b_n$ is convergent, then $\sum_{n=m}^{\infty} a_n$
+    is absolutely convergent, and in fact
+    \[
+        \sum_{n=m}^{\infty} a_n \leq \sum_{n=m}^{\infty} |a_n| \leq \sum_{n=m}^{\infty} b_n.
+    \]
+\end{quotation}
+There is another useful test for series, known as the limit comparison test, but not mentioned in Tao's book.
+\begin{quotation}
+    \textbf{Limit comparison test}
+    Let $a_n \geq 0$, $b_n > 0$ for all $n$. Then if
+    $\lim_{n \to \infty} \frac{a_n}{b_n} = c$ with $0 < c < \infty$,
+    either both series $\sum_{n=m}^{\infty} a_n$ and
+    $\sum_{n=m}^{\infty} b_n$ converge, or both diverge.
+\end{quotation}
+\begin{proof}
+    Because $\lim_{n \to \infty} \frac{a_n}{b_n} = c$, we know that for every
+    $\varepsilon > 0$, there exists a positive integer $n_0$ such that for all
+    $n \geq n_0$ we have
+    $\left| \frac{a_n}{b_n} - c \right| < \varepsilon$, or equivalently,
+    $-\varepsilon < \frac{a_n}{b_n} - c < \varepsilon$, hence
+    $c - \varepsilon < \frac{a_n}{b_n} < c + \varepsilon$.
+
+    Multiplying through by $b_n$, we get
+    \[
+        (c - \varepsilon)b_n < a_n < (c + \varepsilon)b_n.
+    \]
+
+    Since $c > 0$, we can choose $\varepsilon$ small enough so that
+    $c - \varepsilon > 0$. Then we also have
+    \[
+        b_n < \frac{1}{c - \varepsilon} a_n.
+    \]
+
+    By the Direct Comparison Test, if $\sum a_n$ converges, then so does
+    $\sum b_n$.
+
+    Similarly, from $a_n < (c + \varepsilon)b_n$, if $\sum a_n$ diverges,
+    then so does $\sum b_n$.
+
+    Thus, both series converge or both diverge.
+\end{proof}
+
 \section{Exercise 7.4.2}
 Obtain an alternate proof of Proposition 7.4.3 using Proposition 7.4.1,
 Proposition 7.2.13, and expressing $a_n$ as the difference of $(a_n + |a_n|)$
@@ -807,19 +856,19 @@ and $|a_n|$. (This argument is due to Will Ballard.)
 
 
 \section{Takeaway}
-\textbf{Corollary 6.5.1} We have 
+\textbf{Corollary 6.5.1} We have
 \(\lim_{n \to \infty} \frac{1}{n^{1/k}} = 0\) for every integer \( k \geq 1\).
 
 \medskip
 
-\textbf{Lemma 6.5.2} Let $x$ be a real number. Then the limit 
-$\lim_{n \to \infty} x^n$ exists and is equal to $0$ when $|x| < 1$, 
-exists and is equal to $1$ when $x = 1$, and diverges when $x = -1$ 
+\textbf{Lemma 6.5.2} Let $x$ be a real number. Then the limit
+$\lim_{n \to \infty} x^n$ exists and is equal to $0$ when $|x| < 1$,
+exists and is equal to $1$ when $x = 1$, and diverges when $x = -1$
 or when $|x| > 1$.
 
 \medskip
 
-\textbf{Lemma 6.5.3} For any $x > 0$, we have 
+\textbf{Lemma 6.5.3} For any $x > 0$, we have
 \(
 \lim_{n \to \infty} x^{1/n} = 1.
 \)
@@ -913,8 +962,8 @@ is convergent.
 
 \medskip
 
-\textbf{Corollary 7.3.7} Let $q > 0$ be a real number. Then the series 
-$\sum_{n=1}^{\infty} \frac{1}{n^q}$ is convergent when $q > 1$ and divergent 
+\textbf{Corollary 7.3.7} Let $q > 0$ be a real number. Then the series
+$\sum_{n=1}^{\infty} \frac{1}{n^q}$ is convergent when $q > 1$ and divergent
 when $q \leq 1$.
 
 \medskip
@@ -931,13 +980,13 @@ same sum:
 \medskip
 
 
-\textbf{Theorem 7.5.1} (Root test) Let $\sum_{n=m}^{\infty} a_n$ be a series of real 
+\textbf{Theorem 7.5.1} (Root test) Let $\sum_{n=m}^{\infty} a_n$ be a series of real
 numbers, and let $\alpha := \limsup_{n \to \infty} |a_n|^{1/n}$.
 
-\textbf{(a)} If $\alpha < 1$, then the series $\sum_{n=m}^{\infty} a_n$ is absolutely 
+\textbf{(a)} If $\alpha < 1$, then the series $\sum_{n=m}^{\infty} a_n$ is absolutely
 convergent (and hence convergent).
 
-\textbf{(b)} If $\alpha > 1$, then the series $\sum_{n=m}^{\infty} a_n$ is not 
+\textbf{(b)} If $\alpha > 1$, then the series $\sum_{n=m}^{\infty} a_n$ is not
 convergent (and hence cannot be absolutely convergent either).
 
 \textbf{(c)} If $\alpha = 1$, we cannot assert any conclusion.
@@ -946,25 +995,25 @@ convergent (and hence cannot be absolutely convergent either).
 \medskip
 
 
-\textbf{Corollary 7.5.3} (Ratio test) Let $\sum_{n=m}^{\infty} a_n$ be a series of 
-non-zero numbers. (The non-zero hypothesis is required so that the ratios 
+\textbf{Corollary 7.5.3} (Ratio test) Let $\sum_{n=m}^{\infty} a_n$ be a series of
+non-zero numbers. (The non-zero hypothesis is required so that the ratios
 $\frac{|a_{n+1}|}{|a_n|}$ appearing below are well-defined.)
 
 \begin{itemize}
-  \item If $\limsup_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} < 1$, then the series 
-  $\sum_{n=m}^{\infty} a_n$ is absolutely convergent (hence convergent).
+    \item If $\limsup_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} < 1$, then the series
+          $\sum_{n=m}^{\infty} a_n$ is absolutely convergent (hence convergent).
 
-  \item If $\liminf_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} > 1$, then the series 
-  $\sum_{n=m}^{\infty} a_n$ is not convergent (and thus cannot be absolutely 
-  convergent).
+    \item If $\liminf_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} > 1$, then the series
+          $\sum_{n=m}^{\infty} a_n$ is not convergent (and thus cannot be absolutely
+          convergent).
 
-  \item In the remaining cases, we cannot assert any conclusion.
+    \item In the remaining cases, we cannot assert any conclusion.
 \end{itemize}
 
 
 \medskip
 
-\textbf{Proposition 7.5.4} We have 
+\textbf{Proposition 7.5.4} We have
 \(
 \lim_{n \to \infty} n^{1/n} = 1.
 \)
