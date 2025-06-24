@@ -924,8 +924,43 @@ same sum:
 
 \medskip
 
+
+\textbf{Theorem 7.5.1} (Root test) Let $\sum_{n=m}^{\infty} a_n$ be a series of real 
+numbers, and let $\alpha := \limsup_{n \to \infty} |a_n|^{1/n}$.
+
+\textbf{(a)} If $\alpha < 1$, then the series $\sum_{n=m}^{\infty} a_n$ is absolutely 
+convergent (and hence convergent).
+
+\textbf{(b)} If $\alpha > 1$, then the series $\sum_{n=m}^{\infty} a_n$ is not 
+convergent (and hence cannot be absolutely convergent either).
+
+\textbf{(c)} If $\alpha = 1$, we cannot assert any conclusion.
+
+
+\medskip
+
+
+\textbf{Corollary 7.5.3} (Ratio test) Let $\sum_{n=m}^{\infty} a_n$ be a series of 
+non-zero numbers. (The non-zero hypothesis is required so that the ratios 
+$\frac{|a_{n+1}|}{|a_n|}$ appearing below are well-defined.)
+
+\begin{itemize}
+  \item If $\limsup_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} < 1$, then the series 
+  $\sum_{n=m}^{\infty} a_n$ is absolutely convergent (hence convergent).
+
+  \item If $\liminf_{n \to \infty} \frac{|a_{n+1}|}{|a_n|} > 1$, then the series 
+  $\sum_{n=m}^{\infty} a_n$ is not convergent (and thus cannot be absolutely 
+  convergent).
+
+  \item In the remaining cases, we cannot assert any conclusion.
+\end{itemize}
+
+
+\medskip
+
 \textbf{Proposition 7.5.4} We have 
 \(
 \lim_{n \to \infty} n^{1/n} = 1.
 \)
+
 \end{document}
