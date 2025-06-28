@@ -852,7 +852,67 @@ and $|a_n|$. (This argument is due to Will Ballard.)
     as required.
 \end{proof}
 
+\section{Thought on proof of proposition 8.2.6 (d)}
+Tao mentioned axiom of choice is use in this proof, but I don't know why.
+In \href{https://christangdt.home.blog/2019/04/29/243/}{christangdt's blog},
+he indicates a place where axiom of choice is used.
+ 
+\begin{quotation}
+    \textbf{Proposition 8.2.6} (Absolutely convergent series laws) Let $X$ be an
+    arbitrary set (possibly uncountable), and let $f : X \to \mathbb{R}$ and
+    $g : X \to \mathbb{R}$ be functions such that the series
+    $\sum_{x \in X} f(x)$ and $\sum_{x \in X} g(x)$ are both absolutely convergent.
 
+    (d) If $Y$ is another set, and $\varphi : Y \to X$ is a bijection, then
+    $\sum_{y \in Y} f(\varphi(y))$ is absolutely convergent, and
+    \[
+        \sum_{y \in Y} f(\varphi(y)) = \sum_{x \in X} f(x).
+    \]
+    (This result requires the axiom of choice when $X$ is uncountable; see Section 8.4.)
+
+    \begin{proof}
+        First we prove $\sum_{y \in Y} f(\phi(y))$ is absolutely convergent. Choose any
+        finite $A \subseteq Y$, and since $\phi$ is a bijection, $\phi(A) \subseteq X$
+        is also finite. Let
+        \[
+            L = \sup \left\{ \sum_{x \in A} |f(x)| : A \subseteq X, A \text{ finite} \right\}
+            < \infty.
+        \]
+        Then
+        \[
+            \sum_{y \in A} |f(\phi(y))| = \sum_{\phi(y) \in \phi(A)} |f(\phi(y))| \leq L,
+        \]
+        so
+        \[
+            \sup \left\{ \sum_{y \in A} |f(\phi(y))| : A \subseteq Y, A \text{ finite} \right\}
+            \leq L < \infty.
+        \]
+
+        Next, to prove $\sum_{y \in Y} f(\phi(y)) = \sum_{x \in X} f(x)$, we observe that
+        for any $y \in Y$ such that $f(\phi(y)) \neq 0$, we have $x = \phi(y) \in X$ with
+        $f(x) \neq 0$, and vice versa. (\textbf{In this step we use the Axiom of Choice if $X$ and
+        $Y$ are uncountable.}) Thus, the sets
+        \[
+            \{ y \in Y : f(\phi(y)) \neq 0 \} \quad \text{and} \quad
+            \{ x \in X : f(x) \neq 0 \}
+        \]
+        have the same cardinality and are both finite or countable.
+
+        In the finite case, the statement follows directly from Proposition 7.1.11(c).
+        In the countable case, define a bijection $g : \mathbb{N} \to
+            \{ y \in Y : f(\phi(y)) \neq 0 \}$; then
+        $\phi \circ g : \mathbb{N} \to \{ x \in X : f(x) \neq 0 \}$ is also a bijection.
+        Hence,
+        \[
+            \sum_{y \in Y} f(\phi(y)) = \sum_{n=0}^{\infty} f(\phi(g(n))) =
+            \sum_{x \in X} f(x),
+        \]
+        as desired.
+    \end{proof}
+\end{quotation}
+I think (may not be correct) the reason why axiom of choice is used rather than axiom of specification
+is because, every $\phi$ is chosen based on a subset of $Y$. And the set of subsets of
+$Y$ is not countable.
 
 
 \section{Takeaway}
@@ -942,10 +1002,10 @@ is absolutely convergent, and in fact
 \medskip
 
 \textbf{Limit comparison test}
-    Let $a_n \geq 0$, $b_n > 0$ for all $n$. Then if
-    $\lim_{n \to \infty} \frac{a_n}{b_n} = c$ with $0 < c < \infty$,
-    either both series $\sum_{n=m}^{\infty} a_n$ and
-    $\sum_{n=m}^{\infty} b_n$ converge, or both diverge.
+Let $a_n \geq 0$, $b_n > 0$ for all $n$. Then if
+$\lim_{n \to \infty} \frac{a_n}{b_n} = c$ with $0 < c < \infty$,
+either both series $\sum_{n=m}^{\infty} a_n$ and
+$\sum_{n=m}^{\infty} b_n$ converge, or both diverge.
 
 \medskip
 
