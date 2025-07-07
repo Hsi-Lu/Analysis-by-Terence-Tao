@@ -856,7 +856,7 @@ and $|a_n|$. (This argument is due to Will Ballard.)
 Tao mentioned axiom of choice is use in this proof, but I don't know why.
 In \href{https://christangdt.home.blog/2019/04/29/243/}{christangdt's blog},
 he indicates a place where axiom of choice is used.
- 
+
 \begin{quotation}
     \textbf{Proposition 8.2.6} (Absolutely convergent series laws) Let $X$ be an
     arbitrary set (possibly uncountable), and let $f : X \to \mathbb{R}$ and
@@ -891,7 +891,7 @@ he indicates a place where axiom of choice is used.
         Next, to prove $\sum_{y \in Y} f(\phi(y)) = \sum_{x \in X} f(x)$, we observe that
         for any $y \in Y$ such that $f(\phi(y)) \neq 0$, we have $x = \phi(y) \in X$ with
         $f(x) \neq 0$, and vice versa. (\textbf{In this step we use the Axiom of Choice if $X$ and
-        $Y$ are uncountable.}) Thus, the sets
+            $Y$ are uncountable.}) Thus, the sets
         \[
             \{ y \in Y : f(\phi(y)) \neq 0 \} \quad \text{and} \quad
             \{ x \in X : f(x) \neq 0 \}
@@ -913,6 +913,36 @@ he indicates a place where axiom of choice is used.
 I think (may not be correct) the reason why axiom of choice is used rather than axiom of specification
 is because, every $\phi$ is chosen based on a subset of $Y$. And the set of subsets of
 $Y$ is not countable.
+
+\section{Exercise 8.5.15}
+
+\textbf{Exercise 8.5.15.} Let $A$ and $B$ be two non-empty sets such that $A$ does
+not have lesser or equal cardinality to $B$. Using Zorn’s Lemma, prove that $B$
+has lesser or equal cardinality to $A$. (Hint: For every subset $X \subseteq B$, let
+$P(X)$ denote the property that there exists an injective map from $X$ to $A$.) This
+exercise (combined with Exercise 8.3.3) shows that the cardinality of any two sets
+is comparable, as long as one assumes the Axiom of Choice.
+
+\begin{quotation}
+    \textbf{Lemma 8.5.15} (Zorn’s Lemma) Let $X$ be a non-empty partially ordered
+    set, with the property that every non-empty totally ordered subset $Y$ of $X$
+    has an upper bound in $X$. Then $X$ contains at least one maximal element.
+\end{quotation}
+
+The proof is copied from \href{https://math.stackexchange.com/a/3646288/808819}{StackExchange}.
+
+\begin{proof}
+    To use Zorn's Lemma, you want a clever choice p.o. set.
+    Consider the set of pairs $(X,f_X)$ where $X\subset B $ and $f_X:X\to A$ injective.
+    Say $(X,f_X) < (Y,f_Y)$ if $X\subset Y$ and $f_Y=f_X$ on $X$.
+    Upper bounds on chains can be given by union in the obvious manner.
+    Also, as A and B are non empty, we can certainly find one such pair so the p.o. set is non empty.
+
+    Now, we can derive a contradiction if the maximal element is not of the form $(B,f_B)$.
+    Otherwise, we have an injection from a proper subset of B to A that we can't extend.
+    To be unable to extend forces the map to be onto.
+    But then we have a bijection from a proper subset of B to A.
+\end{proof}
 
 
 \section{Takeaway}
