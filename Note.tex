@@ -1231,6 +1231,33 @@ $\frac{|a_{n+1}|}{|a_n|}$ appearing below are well-defined.)
 
 \medskip
 
+\textbf{Definition 9.1.10} (Closure) Let $X$ be a subset of $\mathbb{R}$. The 
+closure of $X$, sometimes denoted $\overline{X}$, is defined to be the set of 
+all the adherent points of $X$.
+
+\medskip
+
+\textbf{Definition 9.1.8} (Adherent points) Let $X$ be a subset of $\mathbb{R}$, 
+and let $x \in \mathbb{R}$. We say that $x$ is an \emph{adherent point} of $X$ 
+if and only if for every $\varepsilon > 0$, there exists $y \in X$ such that 
+$|x - y| \leq \varepsilon$.
+
+\medskip
+
+\textbf{Definition 9.1.15} (Closed set) A subset $E \subseteq \mathbb{R}$ is said to be closed 
+if $E = \overline{E}$, or in other words that $E$ contains all of its adherent 
+points.
+
+\medskip
+
+\textbf{Definition 9.1.18} (Limit points) Let $X$ be a subset of the real line. We 
+say that $x$ is a \textit{limit point} (or a cluster point) of $X$ iff it is an adherent point 
+of $X \setminus \{x\}$. We say that $x$ is an \textit{isolated point} of $X$ if $x \in X$ and 
+there exists some $\varepsilon > 0$ such that $|x - y| > \varepsilon$ for all 
+$y \in X \setminus \{x\}$.
+
+\medskip
+
 \textbf{Theorem 6.6.8} (Bolzano–Weierstrass Theorem) Let $(a_n)_{n=0}^{\infty}$ be 
 a bounded sequence, i.e., there exists a real number $M > 0$ such that 
 $|a_n| \leq M$ for all $n \in \mathbb{N}$. Then there exists at least one 
