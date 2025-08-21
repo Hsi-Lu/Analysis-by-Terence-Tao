@@ -1176,6 +1176,34 @@ For brevity, only $+ \infty $ will be considered.
     So the L'Hôpital's rule is proved.
 \end{proof}
 
+\section{Exercise 10.5.2}
+Explain why Example 1.2.12 does not contradict either of 
+the propositions in this section.
+
+Although both solution book give the solution, saddly, none of them is correct.
+
+\begin{quotation}
+    \textbf{Example 1.2.12} (L’Hôpital’s rule). \dots But even when $f(x)$ and $g(x)$ 
+do go to zero as $x \to x_0$ there is still a possibility for an incorrect conclusion. 
+For instance, consider the limit
+\[
+\lim_{x \to 0} \frac{x^2 \sin(x^{-4})}{x}.
+\]
+\end{quotation}
+
+\begin{proof}[Solution]
+    As the calculation in the example,
+    \[
+\lim_{x \to 0} \frac{x^2 \sin(x^{-4})}{x}
+= \lim_{x \to 0}\frac{2x \sin(x^{-4}) - 4x^{-3} \cos(x^{-4})}{1}
+\]
+note that $\lim_{x \to 0}4x^{-3} \cos(x^{-4})$ doesn't exist, it even not
+converge to $\infty$. It ostensibly converge to $\infty$, in that case, we can
+apply L'Hôpital's rule. But after some investigation, it turns out that
+$4x^{-3} \cos(x^{-4})$ constantly returns to $0$ when $x$ approaches $0$.
+\end{proof}
+
+
 
 \newpage
 
